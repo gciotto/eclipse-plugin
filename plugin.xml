@@ -157,5 +157,20 @@
             name="Components">
       </perspective>
    </extension>
+   <extension
+         id="br.cnpem.gef.wizard.dilmawizard"
+         name="New Dilma File"
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="br.cnpem.gef.wizards.dilmaCategory"
+            name="Dilma">
+      </category>
+      <wizard
+            category="br.cnpem.gef.wizards.dilmaCategory"
+            class="br.cnpem.gef.wizards.DilmaWizard"
+            id="br.cnpem.gef.wizard.newDilma"
+            name="New Dilma File">
+      </wizard>
+   </extension>
 
 </plugin>
