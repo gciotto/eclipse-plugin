@@ -1,17 +1,17 @@
 package br.cnpem.gef.figure;
 
-import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Figure;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.ImageFigure;
 import org.eclipse.draw2d.Label;
-import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
 public class NetworkInterfaceFigure extends Figure {
 	
 	public static final int ETHERNET = 0;
+	
+	public static final int MIN_WIDTH = 180, MIN_HEIGHT = 35;
 	
 	private static String ETHERNET_ICON = "/home/gciotto/eclipse-CSS4_4-LUNA/workspace/br.cnpem.gef.golpe/icon/ethernet.png";
 	private ImageFigure icon;
@@ -24,6 +24,8 @@ public class NetworkInterfaceFigure extends Figure {
 		icon = new ImageFigure ();
 		name = new Label();
 		address = new Label();	
+		
+		setPreferredSize(180, 35);
 		
 		this.setLayoutManager(layout);
 		this.add(icon);

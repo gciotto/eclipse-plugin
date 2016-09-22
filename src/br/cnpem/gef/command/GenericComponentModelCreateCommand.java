@@ -3,8 +3,8 @@ package br.cnpem.gef.command;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.commands.Command;
 
-import br.cnpem.gef.golpe.model.Component;
-import br.cnpem.gef.golpe.model.RootComponent;
+import br.cnpem.gef.model.Component;
+import br.cnpem.gef.model.RootComponent;
 
 public class GenericComponentModelCreateCommand extends Command {
 	

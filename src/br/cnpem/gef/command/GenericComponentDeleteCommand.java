@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.eclipse.gef.commands.Command;
 
-import br.cnpem.gef.golpe.model.Component;
-import br.cnpem.gef.golpe.model.Connection;
-import br.cnpem.gef.golpe.model.RootComponent;
+import br.cnpem.gef.model.Component;
+import br.cnpem.gef.model.Connection;
+import br.cnpem.gef.model.RootComponent;
 
 public class GenericComponentDeleteCommand extends Command {
 	
