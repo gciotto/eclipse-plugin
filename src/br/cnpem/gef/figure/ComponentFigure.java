@@ -15,7 +15,6 @@ import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.XYLayout;
-import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
@@ -23,15 +22,16 @@ import org.eclipse.swt.widgets.Display;
 public class ComponentFigure extends Figure {
 
 	protected GridLayout _label_layout;
-	public Figure _labels_container, interface_container;
+	public Figure _labels_container, interface_container, _top_layer;
 	protected ImageFigure imageIcon;
 	protected Label _label_name;
 	protected RoundedRectangle rectangle;
 	protected ConnectionAnchor _anchor;
+	protected TooltipFigure tooltipFigure;
 	
 	public ComponentFigure() {
 		
-		Figure _top_layer = new Figure();
+		_top_layer = new Figure();
 				
 		rectangle = new RoundedRectangle ();
 		
@@ -51,7 +51,7 @@ public class ComponentFigure extends Figure {
 		this._label_name.setTextAlignment(PositionConstants.CENTER);
 		
 		_top_layer.add (this.imageIcon, BorderLayout.LEFT);
-		
+				
 		_label_layout = new GridLayout(2, true);
 		
 		 _labels_container = new Figure();
@@ -59,8 +59,8 @@ public class ComponentFigure extends Figure {
 		_labels_container.add(_label_name);
 		
 		_top_layer.add (this.imageIcon, BorderLayout.LEFT);
-		_top_layer.add (_labels_container, BorderLayout.CENTER);
-		
+		_top_layer.add (_label_name, BorderLayout.CENTER);
+				
 		rectangle.setLayoutManager(new BorderLayout());
 		rectangle.add(_top_layer, BorderLayout.TOP);
 		rectangle.setBorder(new MarginBorder(8));
@@ -77,9 +77,11 @@ public class ComponentFigure extends Figure {
 		this.setLayoutManager(_layout);
 		this.add(rectangle, BorderLayout.CENTER);
 		
-		//this.setBackgroundColor(new Color(Display.getCurrent(), 204, 204, 255));
 		this.setBackgroundColor(ColorConstants.white);
 		this.setOpaque(true);
+		
+		tooltipFigure = new TooltipFigure(); 
+        setToolTip(tooltipFigure);
 	}
 
 	public ConnectionAnchor getConnectionAnchor(){
@@ -101,5 +103,10 @@ public class ComponentFigure extends Figure {
 	public Label getNameLabel() {
 		return this._label_name;
 	}
+	
+	public void setToolTipMessage(String message) {
+		this.tooltipFigure.setMessage(message);
+	}
+	
 	
 }

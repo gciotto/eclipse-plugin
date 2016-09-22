@@ -1,7 +1,6 @@
 package br.cnpem.gef.properties;
 
 import org.eclipse.jface.viewers.CellEditor;
-import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.PropertyDescriptor;
 

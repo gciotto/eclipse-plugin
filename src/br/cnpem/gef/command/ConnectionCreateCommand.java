@@ -2,11 +2,11 @@ package br.cnpem.gef.command;
 
 import org.eclipse.gef.commands.Command;
 
-import br.cnpem.gef.golpe.model.Component;
-import br.cnpem.gef.golpe.model.Connection;
-import br.cnpem.gef.golpe.model.Host;
-import br.cnpem.gef.golpe.model.RootComponent;
-import br.cnpem.gef.golpe.model.Switch;
+import br.cnpem.gef.model.Component;
+import br.cnpem.gef.model.Connection;
+import br.cnpem.gef.model.Host;
+import br.cnpem.gef.model.RootComponent;
+import br.cnpem.gef.model.Switch;
 
 public class ConnectionCreateCommand extends Command {
 
@@ -23,9 +23,9 @@ public class ConnectionCreateCommand extends Command {
 		if (source instanceof Host || target instanceof Host ) {
 
 			if (source instanceof Host)
-				extraConstraints &= (_root.getConnectionsWith(source).size() < ((Host) source).getMaxNInterface()); 
+				extraConstraints &= (_root.getConnectionsWith(source).size() < ((Host) source).getNetworkInterfaces().size()); 
 			else
-				extraConstraints &= (_root.getConnectionsWith(target).size() < ((Host) target).getMaxNInterface());
+				extraConstraints &= (_root.getConnectionsWith(target).size() < ((Host) target).getNetworkInterfaces().size());
 		}
 
 		if (source instanceof Switch || target instanceof Switch ) {

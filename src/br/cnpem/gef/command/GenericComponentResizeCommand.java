@@ -4,7 +4,7 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.commands.Command;
 
-import br.cnpem.gef.golpe.model.Component;
+import br.cnpem.gef.model.Component;
 
 public class GenericComponentResizeCommand extends Command {
 	

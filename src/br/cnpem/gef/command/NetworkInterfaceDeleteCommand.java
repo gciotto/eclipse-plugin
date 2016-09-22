@@ -2,8 +2,8 @@ package br.cnpem.gef.command;
 
 import org.eclipse.gef.commands.Command;
 
-import br.cnpem.gef.golpe.model.Host;
-import br.cnpem.gef.golpe.model.NetworkInterface;
+import br.cnpem.gef.model.Host;
+import br.cnpem.gef.model.NetworkInterface;
 
 public class NetworkInterfaceDeleteCommand extends Command {
 	

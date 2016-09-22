@@ -2,7 +2,7 @@ package br.cnpem.gef.command;
 
 import org.eclipse.gef.commands.Command;
 
-import br.cnpem.gef.golpe.model.Component;
+import br.cnpem.gef.model.Component;
 
 public class GenericComponentModelRenameCommand extends Command {
 	
