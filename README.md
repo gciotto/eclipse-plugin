@@ -1,4 +1,4 @@
-# Eclipse GEF3 based plugin
+## Eclipse GEF3 based plugin
 
 This project is a Eclipse3 plugin which defines a set of extension points and classes providing options to manage the resources of a network. It is based on GEF3 and includes integration with CSS.
 
