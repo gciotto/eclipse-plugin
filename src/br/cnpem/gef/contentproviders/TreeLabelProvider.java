@@ -1,6 +1,5 @@
 package br.cnpem.gef.contentproviders;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.jface.viewers.LabelProvider;
