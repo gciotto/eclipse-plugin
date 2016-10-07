@@ -7,6 +7,7 @@ import org.eclipse.ui.views.properties.PropertyDescriptor;
 import org.eclipse.ui.views.properties.TextPropertyDescriptor;
 
 import br.cnpem.gef.model.PVariable;
+import br.cnpem.gef.properties.PVPropertyDescriptor;
 
 public class PVariablePropertySource implements IPropertySource {
 
@@ -28,7 +29,7 @@ public class PVariablePropertySource implements IPropertySource {
 	public IPropertyDescriptor[] getPropertyDescriptors() {
 		if (this.propertyDescriptors == null) {
 
-			PropertyDescriptor nameDescriptor = new TextPropertyDescriptor(PROPERTY_NAME, "Name:");
+			PropertyDescriptor nameDescriptor = new PVPropertyDescriptor(PROPERTY_NAME, "Name:");
 			nameDescriptor.setLabelProvider(new LabelProvider() {
 				@Override
 				public String getText(Object element) {
