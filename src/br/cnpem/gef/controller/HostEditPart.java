@@ -58,15 +58,19 @@ public class HostEditPart extends GenericComponentEditPart {
 		
 		if (_model.getAutoScale()) {
 			
-			int height = 70 + (_model.getNetworkInterfaces().size() + _model.getPVs().size())*35, 
+			int height = 70, 
 				width = _figure.getPreferredSize().width;
 			
-			if (!_model.getNetworkInterfaces().isEmpty())
-				width = Integer.max(width, NetworkInterfaceFigure.MIN_WIDTH + 30);
+			if (!_model.getCollapse()) {
 			
-			if (!_model.getPVs().isEmpty())
-				width = Integer.max(width, PVariableFigure.MIN_WIDTH + 30);
+				height += (_model.getNetworkInterfaces().size() + _model.getPVs().size())*35;
 				
+				if (!_model.getNetworkInterfaces().isEmpty())
+					width = Integer.max(width, NetworkInterfaceFigure.MIN_WIDTH + 30);
+				
+				if (!_model.getPVs().isEmpty())
+					width = Integer.max(width, PVariableFigure.MIN_WIDTH + 30);
+			}
 			
 			parent.setLayoutConstraint(this, _figure, new Rectangle(_model.getScreenLocation().x, _model.getScreenLocation().y,
 					width, height));

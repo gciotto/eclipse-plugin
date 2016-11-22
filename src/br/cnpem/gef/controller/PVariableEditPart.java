@@ -48,9 +48,12 @@ public class PVariableEditPart extends AbstractGraphicalEditPart {
 		
 		int i =  _parent_model.getPVs().indexOf(_model);
 		
-		if (i >= 0) 
+		if (i >= 0 && !_parent_model.getCollapse()) {
+			getFigure().setVisible(true);
 			parent.setLayoutConstraint(this, _figure, new Rectangle(new Point(0 , 5 + (_parent_model.getNetworkInterfaces().size() + i) * 35), 
 					new Dimension(PVariableFigure.MIN_WIDTH, PVariableFigure.MIN_HEIGHT)));
+		}
+		else if (_parent_model.getCollapse()) getFigure().setVisible(false);
 	}
 	
 	@Override

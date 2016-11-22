@@ -23,7 +23,7 @@ public class Component extends Observable implements Comparable<Component>, Seri
 	protected Place location;
 	protected String name, iconAddress;
 	protected transient Image iconRoot;
-	protected boolean iconChanged;
+	protected boolean iconChanged, shouldCollapseIcons;
 
 	protected List<Connection> connections;
 		
@@ -39,6 +39,7 @@ public class Component extends Observable implements Comparable<Component>, Seri
 		this.iconAddress = CnpemPlugin.getDefault().getBundle().getResource("icon/generic.png").getPath(); 
 		this.iconRoot = CnpemPlugin.getDefault().getImageRegistry().get(CnpemPlugin.GENERIC_ID);
 		this.iconChanged = false;
+		this.shouldCollapseIcons = false;
 		
 		this.connections = new ArrayList<Connection>();
 		
@@ -150,5 +151,14 @@ public class Component extends Observable implements Comparable<Component>, Seri
 	public void setIconAddress(String value) {
 		this.iconAddress = value;
 		update();	
+	}
+
+	public boolean getCollapse() {
+		return shouldCollapseIcons;
+	}
+
+	public void setCollapse(boolean b) {
+		shouldCollapseIcons = b;
+		update();
 	}
 }

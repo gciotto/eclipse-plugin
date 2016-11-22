@@ -89,6 +89,9 @@ public class ComponentPropertySource implements IPropertySource {
 		
 		if (PROPERTY_SCALE.equals(id))
 			return c.getAutoScale();
+		
+		if (PROPERTY_COLLAPSE.equals(id))
+			return c.getCollapse();
 				
 		return null;
 	}
@@ -115,6 +118,9 @@ public class ComponentPropertySource implements IPropertySource {
 		
 		if (PROPERTY_SCALE.equals(id))
 			c.setAutoScale(true);
+		
+		if (PROPERTY_COLLAPSE.equals(id))
+			c.setCollapse(false);
 	}
 
 
@@ -131,6 +137,9 @@ public class ComponentPropertySource implements IPropertySource {
 		
 		if (PROPERTY_SCALE.equals(id))
 			c.setAutoScale((boolean) value);
+		
+		if (PROPERTY_COLLAPSE.equals(id))
+			c.setCollapse((boolean) value);
 				
 	}
 
