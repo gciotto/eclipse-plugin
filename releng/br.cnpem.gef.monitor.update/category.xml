@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <bundle id="br.cnpem.gef.monitor.plugin" version="1.0.0.qualifier">
+      <category name="br.cnpem.gef.plugin.category"/>
+   </bundle>
+   <category-def name="br.cnpem.gef.plugin.category" label="Dilma Plugin"/>
+</site>

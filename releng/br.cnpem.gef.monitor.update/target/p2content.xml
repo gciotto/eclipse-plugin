@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='1'>
+  <unit id='201611221117.br.cnpem.gef.plugin.category' version='1.0.0.2--cDOJ2k7735E5577555G'>
+    <properties size='2'>
+      <property name='org.eclipse.equinox.p2.name' value='Dilma Plugin'/>
+      <property name='org.eclipse.equinox.p2.type.category' value='true'/>
+    </properties>
+    <provides size='1'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='201611221117.br.cnpem.gef.plugin.category' version='1.0.0.2--cDOJ2k7735E5577555G'/>
+    </provides>
+    <requires size='1'>
+      <required namespace='org.eclipse.equinox.p2.iu' name='br.cnpem.gef.monitor.plugin' range='[1.0.0.201611221117,1.0.0.201611221117]'/>
+    </requires>
+    <touchpoint id='null' version='0.0.0'/>
+  </unit>
+</units>
