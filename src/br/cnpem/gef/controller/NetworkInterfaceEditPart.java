@@ -49,13 +49,20 @@ public class NetworkInterfaceEditPart extends AbstractGraphicalEditPart {
 		_figure.setIcon(NetworkInterfaceFigure.ETHERNET);
 		
 		HostEditPart parent = (HostEditPart) getParent();
+		Host parent_model = (Host) parent.getModel();
 				
-		int i = ((Host)parent.getModel()).getNetworkInterfaces().indexOf(this.getModel());
+		int i = parent_model.getNetworkInterfaces().indexOf(this.getModel());
 		
-		if (i >= 0) 
+		
+		if (i >= 0 && !parent_model.getCollapse()) {
+			getFigure().setVisible(true);
 			parent.setLayoutConstraint(this, _figure, new Rectangle(new Point(0 , 5 + i * 35), 
 					new Dimension(NetworkInterfaceFigure.MIN_WIDTH, NetworkInterfaceFigure.MIN_HEIGHT)));
-		
+		}
+		else  {
+			getFigure().setVisible(false);
+		}
+			
 	}
 	
 	@Override
